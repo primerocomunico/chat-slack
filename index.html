@@ -37,36 +37,68 @@
 </head>
 
 <body class="d-flex flex-column h-100">
+
+  <!-- New user modal code  -->
+        <div class="modal fade" id="gettoken-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Write your token and channel</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="newuser-name">TOKEN:</label>
+                  <input type="text" class="form-control" id="token">
+                  <small class="form-text text-muted">Write the <a href="https://api.slack.com/apps" target="_blank">Slack API token.</a> PLEASE, DO NOT SHARE WITH ANYONE</small>
+                </div>
+                <div class="form-group">
+                  <label for="newuser-age">CHANNEL:</label>
+                  <input type="text" class="form-control" id="channel">
+                  <small class="form-text text-muted">Checkout the code of the channel in the last part of Slack chat url</small>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="token-submit-button" data-dismiss="modal">Let's chat!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- New user modal code  -->
+
   <!-- Begin page content -->
   <main role="main" class="flex-shrink-0">
     <div class="container">
       <img src="logo.png" class="mt-5" alt="" id="logo">
-
       <div class="row">
         <div class="col">
           <br>
           <p class="lead">my OWN Chat</p>
           <p>Created by <a href="https://primerocomunico.github.io/portfolio/" target="_blank">Sergio GES Escobar</a></p>
-          <hr>
-          <br>
-          <div class="write-text" class="mx-auto">
-            <form class="form-inline">
-              <div class="form-group mb-2">
-                <input type="text" readonly class="form-control-plaintext" value="ola, ¿qué ase?">
-              </div>
-              <div class="form-group mx-sm-3 mb-2">
-                <label for="text-contenedor" class="sr-only">New Message</label>
-                <input type="text" class="form-control" id="contenedor-text">
-              </div>
-              <button type="button" class="btn btn-primary mb-2" id="chat-button">CHATEA!</button>
-            </form>
-          </div>
-          <br>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-primary access-button" data-toggle="modal" data-target="#gettoken-modal" id="acces-button">GET ACCESS</button>
+          <button type="button" class="btn btn-primary access-button" id="update-button">UPDATE</button>
         </div>
       </div>
+      <hr>
+        <div class="row">
+        <div class="col-9 mx-sm-3 mb-2">
+        <br>
+          <input type="text" class="form-control form-control-lg" id="contenedor-text">
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-primary chat-button" id="chat-button">CHAT!</button>
+        </div>
+      </div>
+      <br>
       <div class="row">
         <div class="col" id="contenedor-card">
-
         </div>
       </div>
     </div>

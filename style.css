@@ -1,3 +1,15 @@
 #logo {
   width: 200px;
 }
+
+.access-button {
+  margin-top: 7%;
+  margin-left: 13%;
+  padding: 16px;
+}
+
+.chat-button {
+  margin-top: 25%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
